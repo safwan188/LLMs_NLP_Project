@@ -44,18 +44,18 @@ This project contains a series of images that display the results of comparing d
 
 ###  Demonstration of LLMs
 
-#### Image 2
+#### heat-map
 ![New 27 2](./new_files/new_27_2.png)
-*Demonstration of LLMs - Series 27 Image 2*
 
-#### Image 3
+#### attention array
 ![New 27 3](./new_files/new_27_3.png)
-*Demonstration of LLMs - Series 27 Image 3*
 
-#### Image 4
+#### attention array
 ![New 27 4](./new_files/new_27_4.png)
-*Demonstration of LLMs - Series 27 Image 4*
 
-#### Image 5
+#### attention array
 ![New 27 5](./new_files/new_27_5.png)
-*Demonstration of LLMs - Series 27 Image 5*
+#### attention matrix 
+![2131](./new_files/2131.png)
+
+
