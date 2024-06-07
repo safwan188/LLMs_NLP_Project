@@ -44,7 +44,7 @@ This project contains a series of images that display the results of comparing d
 
 ###  Demonstration of LLMs
 
-#### heat-map
+#### heat-map of attention matrix
 ![New 27 2](./new_files/new_27_2.png)
 
 #### attention array
