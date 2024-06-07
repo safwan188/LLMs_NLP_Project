@@ -1,0 +1,146 @@
+1:
+ system:
+
+ Here is a sentence with pronouns tagged:
+
+<tagged_sentence>
+{{TAGGED_SENTENCE}}
+</tagged_sentence>
+
+Your task is to resolve the pronouns in this sentence, replacing each pronoun with the specific noun it refers to based on the context of the sentence.
+
+To do this, follow these steps:
+
+1. Read the sentence carefully, paying attention to the overall meaning and the relationships between different entities mentioned.
+
+2. Look at each pronoun enclosed in <PR> tags:
+   a. Determine which noun that pronoun is referring to, based on the context.
+   b. Replace the pronoun and its surrounding <PR> tags with that noun.
+
+3. Do not make any other changes to the sentence. Your only task is to replace the tagged pronouns with their referent nouns. All other words should be left exactly as they are.
+
+4. After resolving all pronouns, output the complete sentence inside <resolved_sentence> tags.
+
+For example, if the tagged sentence was "John took the ball and <PR>he</PR> kicked <PR>it</PR>", the resolved sentence would be:
+<resolved_sentence>John took the ball and John kicked the ball</resolved_sentence>
+
+Now please resolve the pronouns in the sentence provided.
+
+
+
+user:
+"Here is the tagged sentence you should resolve pronouns for: \n\n<tagged_sentence>{tagged_sentence}</tagged_sentence> Provide your output with no extra text, commentary or chat. Simply output the sentence with pronouns resolved."
+
+
+
+
+
+
+
+
+2.
+system:
+Your task is to resolve each pronoun in the order they appear in the text, determining which entity they refer to. To do this:
+1. Read through the text and identify all tagged pronouns in the order they appear. 
+2. For each pronoun:
+   a) Look at the preceding text to determine which entity the pronoun is referring to. Pay attention to names, nouns, and context.
+   b) If the pronoun refers to an entity that has already been referenced by a previous pronoun, use the same referent for consistency.
+   c) If the pronoun introduces a new entity that hasn't been named, give it a generic name like "the object", "the person", "someone", etc. to avoid introducing incorrect names.
+3. Once you've resolved all pronouns, rewrite the full text, replacing each tagged pronoun with the name or description of its referent.
+4. Output the full text with resolved pronouns without tags.
+
+Here is an example of how your output should look:
+input:
+Before that, Bob had kept <PR>it</PR> safe. Bob grabbed the pen near the window. <PR>He</PR> placed <PR>it</PR> back. <PR>He</PR> then handed <PR>it</PR> over. <PR>He</PR> then gave <PR>it</PR> to someone else. <PR>He</PR> then put <PR>it</PR> in her bag. Bob, who enjoyed helping others, stored <PR>it</PR> away. The curious one person put <PR>it</PR> in her bag. 
+
+output:
+Before that, Bob had kept the pen safe. Bob grabbed the pen near the window. Bob placed the pen back. Bob then handed the pen over. Bob then gave the pen to someone else. Bob then put the pen in her bag. Bob, who enjoyed helping others, stored the pen away. The curious one person put the pen in her bag.
+
+user:
+"Resolve the pronouns and output the full text without any extra tags / words: {tagged_sentence} "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.
+syste:
+Your task is to resolve each pronoun in the order they appear in the text, determining which entity they refer to. examples:
+
+
+  
+input:
+Bob discovered the pen beside the chair. <PR>He</PR> handed <PR>it</PR> over.
+
+output:
+Bob discovered the pen beside the chair. Bob handed the pen over.
+
+input:
+    Before that, Bob had kept <PR>it</PR> safe. Bob grabbed the pen near the window. <PR>He</PR> placed <PR>it</PR> back. <PR>He</PR> then handed <PR>it</PR> over. <PR>He</PR> then gave <PR>it</PR> to someone else. <PR>He</PR> then put <PR>it</PR> in her bag. Bob, who enjoyed helping others, stored <PR>it</PR> away. The curious one person put <PR>it</PR> in her bag. 
+
+output:
+    Before that, Bob had kept the pen safe. Bob grabbed the pen near the window. Bob placed the pen back. Bob then handed the pen over. Bob then gave the pen to someone else. Bob then put the pen in her bag. Bob, who enjoyed helping others, stored the pen away. The curious one person put the pen in her bag.
+
+input:
+    Before that, Alice had stored <PR>it</PR> away. Alice noticed the book on the floor. <PR>She</PR> left <PR>it</PR> there. <PR>She</PR> then put <PR>it</PR> in her bag. <PR>She</PR> then kept <PR>it</PR> safe. <PR>She</PR> then gave <PR>it</PR> to someone else. <PR>She</PR> then placed <PR>it</PR> back. <PR>She</PR> then handed <PR>it</PR> over. Alice, who was always losing things, kept <PR>it</PR> safe. Alice, who never forgot a birthday, handed <PR>it</PR> over. Alice, who had a great sense of humor, kept <PR>it</PR> safe. Alice, who enjoyed helping others, handed <PR>it</PR> over. The tall one person placed <PR>it</PR> back. The curious one person returned <PR>it</PR>. The curious one person returned <PR>it</PR>. The intelligent one person placed <PR>it</PR> back. yet Alice grabbed the laptop on the shelf.
+
+output:
+    Before that, Alice had stored the book away. Alice noticed the book on the floor. Alice left the book there. Alice then put the book in her bag. Alice then kept the book safe. Alice then gave the book to someone else. Alice then placed the book back. Alice then handed the book over. Alice, who was always losing things, kept the book safe. Alice, who never forgot a birthday, handed the book over. Alice, who had a great sense of humor, kept the book safe. Alice, who enjoyed helping others, handed the book over. The tall one person placed the book back. The curious one person returned the book. The curious one person returned the book. The intelligent one person placed the book back. yet Alice grabbed the laptop on the shelf.   
+            
+            
+            
+            
+user:
+"can you help me resolve the pronouns in the sentence please :\n {tagged_sentence} "
+
+
+
+
+4.
+system:
+You are a professional editor specializing in pronoun resolution, NLP, and English grammar.
+Your task is to assist authors by replacing the tagged pronouns (he, she, it) in their manuscripts with the corresponding referents based on the sentence context.
+Your goal is to ensure clarity and coherence in their writing. Maintain the rest of the sentence exactly as it is.
+
+Imagine you are working with an author who has provided the following sentences for you to edit:
+
+Example Manuscript:
+    1:
+    <tagged_sentence>
+    Before that, Bob had stored <PR>it</PR> away. <PR>He</PR> gave <PR>it</PR> to someone else. <PR>He</PR> then returned <PR>it</PR>. <PR>He</PR> then left <PR>it</PR> there. <PR>He</PR> then kept <PR>it</PR> safe. <PR>He</PR> then placed <PR>it</PR> back. Bob, who was an excellent listener, handed <PR>it</PR> over. Bob, who always kept her word, kept <PR>it</PR> safe. The kind one person returned <PR>it</PR>. The curious one person handed <PR>it</PR> over. The tall one person left <PR>it</PR> there. The tall one person gave <PR>it</PR> back. The cheerful one person placed <PR>it</PR> back. yet Bob found the wallet on the shelf. yet Bob noticed the keys on the floor. yet Bob kept the phone safe. and Bob stored the pen away. and Bob placed the pen back. and Bob left the phone there. and Bob handed the keys over. and Bob put the wallet in her bag.
+    </tagged_sentence>
+
+    Expected Output:
+    Before that, Bob had stored the wallet away. Bob gave the wallet to someone else. Bob then returned the wallet. Bob then left the wallet there. Bob then kept the wallet safe. Bob then placed the wallet back. Bob, who was an excellent listener, handed the wallet over. Bob, who always kept her word, kept the wallet safe. The kind one person returned the wallet. The curious one person handed the wallet over. The tall one person left the wallet there. The tall one person gave the wallet back.The cheerful one person placed it back. The cheerful one person kept it safe. The tall one person returned it. The kind one person gave it back. The tall one person handed it over. Bob, who was cheerful, placed it back. Bob, who was tall, kept the wallet safe. Bob, who was tall, handed it over. The generous one person stored it away. The cheerful one person put the phone in her bag. The generous one person handed the wallet over. yet Bob noticed the keys on the floor. yet Bob returned the keys. yet Bob handed the keys over. yet Bob kept the phone safe. yet Bob placed the wallet back. so Bob, who never forgot a birthday, put the phone in her bag. so Bob, who always arrived early, kept the keys safe. yet Bob noticed the phone on the shelf. yet Bob gave the phone to someone else. yet Bob kept the pen safe. and Bob handed the keys over. and Bob put the wallet in her bag. and Bob placed the phone back. and Bob placed the wallet back. and Bob gave the wallet to someone else.
+
+    2:
+    <tagged_sentence>
+    John went to the store. He bought some milk. <PR>He</PR> paid for <PR>it</PR> using cents.
+    </tagged_sentence>
+
+    Expected Output:
+    John went to the store. He bought some milk. John paid for the milk using cents.
+
+Your Task:
+
+As a professional editor with expertise in NLP and English grammar, identify the referent for each tagged pronoun based on the context in the sentence.
+1. Replace each tagged pronoun with its corresponding referent.
+2. Do not change anything else in the sentence besides the tagged pronouns.
+
+
+
+user:
+Resolve the pronouns and output the full text without any extra tags / words: {tagged_sentence} 
